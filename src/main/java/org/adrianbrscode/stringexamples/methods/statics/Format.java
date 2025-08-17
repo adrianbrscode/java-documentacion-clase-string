@@ -1,6 +1,8 @@
 package org.adrianbrscode.stringexamples.methods.statics;
 
 
+import java.util.Locale;
+
 public class Format {
     //Devuelve una cadena formateada utilizando la cadena de formato y los argumentos especificados.
     //los formatos pueden se los siguientes:
@@ -22,10 +24,17 @@ public class Format {
         LOS MAS IMPORTANTES PUEDEN SER %d, %f
          */
     public static void main(String[] args) {
-        System.out.println(ejemplo7(154));
-        System.out.println(ejemplo8(154.1119));
-        System.out.println(ejemplo9(154.12312561256));
-        System.out.println(ejemplo10(1458));
+        System.out.println("ejemplo1(\"adrian\") = " + ejemplo1("adrian"));
+        System.out.println("ejemplo2(123,456) = " + ejemplo2(123,456));
+        System.out.println("ejemplo3(123) = " + ejemplo3(123));
+        System.out.println("ejemplo4(157.4567) = " + ejemplo4(157.4567));
+        System.out.println("ejemplo5(154) = " + ejemplo5(154));
+        System.out.println("ejemplo6(145) = " + ejemplo6(145));
+        System.out.println("ejemplo7(156) = " + ejemplo7(156));
+        System.out.println("ejemplo8(154.78945) = " + ejemplo8(154.78945));
+        System.out.println("ejemplo9(154.14578) = " + ejemplo9(154.14578));
+        System.out.println("ejemplo10(154) = " + ejemplo10(154));
+        System.out.println("ejemplo11(123.25) = " + ejemplo11(123.25));
     }
 
     //EJEMPLO 1 USANDO %s
@@ -74,7 +83,7 @@ public class Format {
     //EJEMPLO 5
     //suma 2 numeros iguales y retorna "<num1>+<num1>=<num1+num1>
     public static String ejemplo5 (int num1){
-        return String.format("%1d+%1d=%2d",num1,num1+num1);
+        return String.format("%1$d+%1$d=%2$d",num1,num1+num1);
     }
 
     //EJEMPLO 6
@@ -120,6 +129,16 @@ public class Format {
     //  OJO no se aplica en este caso [.precision] porque un entero no tiene punto decimal
     public static String ejemplo10 (int num){
         return String.format("%1$+010d %1$+010d %1$+010d ",num);
+    }
+
+    //tambien existe un metodo que hace lo mismo, pero puedes especificar la region
+    //esto lo que modifica es que en otras regiones pueden tratarse diferente los punto decimal
+    //EJEMPLO: aplica 2 format, uno con region Locale.US y otro con Locale.GERMANY e imprimir un numero .decimal
+    public static String ejemplo11 (double num){
+        String cadenaUS = String.format(Locale.US,"%f",num);
+        String cadenaGERMANY = String.format(Locale.GERMANY,"%f",num);
+        return String.format("cadenaUS: %s ; cadenaGERMANY %s",cadenaUS,cadenaGERMANY);
+        //observa que en US imprime punto, y en GERMANY imprime coma.
     }
 
 
