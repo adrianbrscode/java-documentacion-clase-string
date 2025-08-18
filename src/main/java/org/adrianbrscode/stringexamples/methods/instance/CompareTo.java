@@ -32,14 +32,14 @@ public class CompareTo {
         System.out.println("---------EJEMPLO2---------");
         System.out.println("cadena2 = " + cadena2);
         System.out.println("cadena3 = " + cadena3);
-        System.out.printf("i-t -> %d - %d = %d\n",cadena2.length(),cadena3.length(),cadena2.length()-cadena3.length());
+        System.out.printf("cadena2 len- cadena3 len -> %d - %d = %d\n",cadena2.length(),cadena3.length(),cadena2.length()-cadena3.length());
         System.out.println("cadena1.compareTo(cadena2) = " + cadena2.compareTo(cadena3));
 
         //mismas longitudes pero con patron inicial
         System.out.println("---------EJEMPLO3---------");
         System.out.println("cadena2 = " + cadena2);
         System.out.println("cadena4 = " + cadena4);
-        System.out.printf("i-t -> %d - %d = %d\n",(int)'a',(int)'o',(int)'a'-(int)'o');
+        System.out.printf("a-o -> %d - %d = %d\n",(int)'a',(int)'o',(int)'a'-(int)'o');
         System.out.println("cadena1.compareTo(cadena2) = " + cadena2.compareTo(cadena4));
 
     }
